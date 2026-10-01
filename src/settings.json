@@ -1,0 +1,17 @@
+{
+  "Hotkey": "Ctrl+Q",
+  "Model": "gpt-6-luna",
+  "ReasoningEffort": "low",
+  "FastMode": true,
+  "ContextWindowTokens": 100000,
+  "TimeoutSeconds": 180,
+  "PopupSeconds": 5,
+  "SystemNotifications": false,
+  "ProtectNewClipboard": true,
+  "ReuseRecentHistory": true,
+  "HistoryCharacters": 12000,
+  "MaxInputCharacters": 60000,
+  "CodexPath": "",
+  "ProxyUrl": "",
+  "MinimalInstructions": true
+}
