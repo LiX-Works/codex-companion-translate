@@ -1,5 +1,6 @@
 {
   "Hotkey": "Ctrl+Q",
+  "ChineseHotkey": "Ctrl+E",
   "Model": "gpt-6-luna",
   "ReasoningEffort": "low",
   "FastMode": true,

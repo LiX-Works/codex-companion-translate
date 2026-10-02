@@ -17,9 +17,9 @@ New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
 $brandIcon = Join-Path $sourceDir 'assets\translator.ico'
 if (-not (Test-Path -LiteralPath $brandIcon)) { throw '缺少品牌图标；请先生成 assets。' }
 $manifest = Join-Path $sourceDir 'app.manifest'
-& $compiler /nologo /langversion:5 /target:winexe /optimize+ /platform:anycpu "/win32icon:$brandIcon" "/win32manifest:$manifest" "/out:$exe" /reference:System.dll /reference:System.Core.dll /reference:System.Drawing.dll /reference:System.Windows.Forms.dll /reference:System.Web.Extensions.dll (Join-Path $sourceDir 'App.cs') (Join-Path $sourceDir 'Backend.cs') (Join-Path $sourceDir 'Popup.cs') (Join-Path $sourceDir 'Branding.cs') (Join-Path $sourceDir 'MotionGlyph.cs')
+& $compiler /nologo /langversion:5 /target:winexe /optimize+ /platform:anycpu "/win32icon:$brandIcon" "/win32manifest:$manifest" "/out:$exe" /reference:System.dll /reference:System.Core.dll /reference:System.Drawing.dll /reference:System.Windows.Forms.dll /reference:System.Web.Extensions.dll (Join-Path $sourceDir 'App.cs') (Join-Path $sourceDir 'Backend.cs') (Join-Path $sourceDir 'Popup.cs') (Join-Path $sourceDir 'Branding.cs') (Join-Path $sourceDir 'MotionGlyph.cs') (Join-Path $sourceDir 'TranslationReader.cs')
 if ($LASTEXITCODE -ne 0) { throw '编译失败。' }
-foreach ($name in @('settings.json', 'translation-instructions.txt')) {
+foreach ($name in @('settings.json', 'translation-instructions.txt', 'translation-instructions.zh-CN.txt')) {
     $path = Join-Path $targetDir $name
     if (-not (Test-Path -LiteralPath $path)) { Copy-Item -LiteralPath (Join-Path $sourceDir $name) -Destination $path }
 }
@@ -48,7 +48,7 @@ if (-not $NoShortcut) {
     $shortcut.TargetPath = $exe
     $shortcut.WorkingDirectory = $targetDir
     $shortcut.IconLocation = (Join-Path $targetDir 'translator-v0.4.ico') + ',0'
-    $shortcut.Description = '复制指令，Ctrl+Q 翻译为英文；托盘菜单可退出。'
+    $shortcut.Description = 'Ctrl+Q 中译英，Ctrl+E 英译中；托盘菜单可退出。'
     $shortcut.Save()
 }
 if ($Start) { & (Join-Path $sourceDir 'launch.ps1') -ProgramPath $exe }
