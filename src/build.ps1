@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$Destination = "$env:USERPROFILE\.local\share\codex-clipboard-translator",
     [switch]$NoShortcut,
     [switch]$Start

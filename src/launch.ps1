@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$ProgramPath = "$env:USERPROFILE\.local\share\codex-clipboard-translator\CodexClipboardTranslator.exe"
 )
 $ErrorActionPreference = 'Stop'
