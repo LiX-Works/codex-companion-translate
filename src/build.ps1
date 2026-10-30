@@ -5,6 +5,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $sourceDir = $PSScriptRoot
+Copy-Item -LiteralPath (Join-Path $sourceDir '..\docs\README.zh-CN.md') -Destination (Join-Path $sourceDir 'README.md') -Force
 $targetDir = [IO.Path]::GetFullPath($Destination)
 $compiler = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
 if (-not (Test-Path -LiteralPath $compiler)) { throw '.NET Framework C# 编译器不可用；未安装其他环境。' }

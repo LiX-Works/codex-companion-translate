@@ -1,6 +1,6 @@
 dist/
 build/
-src/README.md
+/README.md
 **/runtime/
 **/validation/
 *.exe

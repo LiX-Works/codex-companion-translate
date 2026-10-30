@@ -1,3 +1,7 @@
+![Ctrl+Q translation status popup](assets/notification.png)
+
+![Ctrl+E Simplified Chinese reader](assets/chinese-reader.png)
+
 # Codex Companion Translate
 
 [English](README.md) · [简体中文](README.zh-CN.md)
@@ -12,19 +16,13 @@
 
 If you copy something else while a translation is running, that newer clipboard content is preserved. You can manually copy the complete translation from the reader, popup, or tray menu.
 
-## Screenshot
-
-![Ctrl+Q translation status popup](assets/notification.png)
-
-![Ctrl+E Simplified Chinese reader](assets/chinese-reader.png)
-
 ## Download or build
 
 - **Portable release:** [Get the latest ZIP](https://github.com/LiX-Works/codex-companion-translate/releases/latest), extract it, and run `CodexClipboardTranslator.exe`.
 - **Source:** clone the [repository](https://github.com/LiX-Works/codex-companion-translate), sign in to Codex CLI with your ChatGPT account (`codex login` if needed), then run at the repository root:
 
   ```powershell
-  ./build.ps1 -Start
+  ./src/build.ps1 -Start
   ```
 
 The source build creates a desktop shortcut named **Codex 伴随翻译** and starts the app. The app uses Windows .NET Framework 4 and WinForms.

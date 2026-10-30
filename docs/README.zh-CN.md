@@ -1,3 +1,7 @@
+![Ctrl+Q 翻译状态提示窗](assets/notification.png)
+
+![Ctrl+E 简体中文阅读窗](assets/chinese-reader.png)
+
 # Codex 伴随翻译
 
 [English](README.md) · [简体中文](README.zh-CN.md)
@@ -12,19 +16,13 @@
 
 翻译期间如果又复制了其他内容，工具会保留新的剪贴板；需要时可从阅读窗、提示窗或托盘菜单手动复制完整译文。
 
-## 截图
-
-![Ctrl+Q 翻译状态提示窗](assets/notification.png)
-
-![Ctrl+E 简体中文阅读窗](assets/chinese-reader.png)
-
 ## 下载或构建
 
 - **便携版：**[下载最新 ZIP](https://github.com/LiX-Works/codex-companion-translate/releases/latest)，解压后运行 `CodexClipboardTranslator.exe`。
 - **源码：**克隆[项目仓库](https://github.com/LiX-Works/codex-companion-translate)，用 ChatGPT 账号登录 Codex CLI（如未登录，可运行 `codex login`），再在仓库根目录执行：
 
   ```powershell
-  ./build.ps1 -Start
+  ./src/build.ps1 -Start
   ```
 
 源码构建会启动程序，并创建名为 **Codex 伴随翻译** 的桌面快捷方式。程序使用 Windows .NET Framework 4 和 WinForms。
